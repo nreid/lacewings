@@ -21,7 +21,7 @@ module load stacks/2.41
 TRIMDIR=../results/trimmed_data/
 
 POOLS=($(ls -1 $TRIMDIR/*fastq.gz))
-BARCODES=($(ls ../../../metadata/ | grep barcodes))
+BARCODES=($(ls -1 ../../../metadata/*barcode*))
 
 # make demultiplexed directory if it doesn't exist
 mkdir -p ../results/demultiplexed_fastqs
@@ -30,6 +30,7 @@ OUTDIR=../results/demultiplexed_fastqs
 FASTQ=$(echo ${POOLS[$SLURM_ARRAY_TASK_ID]})
 BC=$(echo ${BARCODES[$SLURM_ARRAY_TASK_ID]})
 
+echo demultiplexing file $FASTQ using barcode set $BC
 
 process_radtags \
 -f $FASTQ \
