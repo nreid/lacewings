@@ -9,7 +9,7 @@
 #SBATCH --mem=20G
 #SBATCH --partition=general
 #SBATCH --qos=general
-#SBATCH --array=[0-2]
+#SBATCH --array=[0-140]
 
 module load java
 module load Trimmomatic/0.36
@@ -21,7 +21,7 @@ echo This is array task number $SLURM_ARRAY_TASK_ID
 
 ADAPT=../../../metadata/TruSeq3-SE.fa
 
-INDIR=/home/FCAM/ktaylor/rad_analysis/data
+INDIR=../results/demultiplexed_fastqs
 POOLS=($(ls -1 $INDIR/*fastq.gz))
 INFILE=$(echo ${POOLS[$SLURM_ARRAY_TASK_ID]} | sed 's/.*\///')
 OUTFILE=$(echo $INFILE | sed 's/fastq/trim.fastq/')

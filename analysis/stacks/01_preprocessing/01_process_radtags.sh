@@ -18,9 +18,9 @@ echo This is array task number $SLURM_ARRAY_TASK_ID
 module load stacks/2.41
 
 #input/output directories, supplementary files
-TRIMDIR=../results/trimmed_data/
+INDIR=/home/FCAM/ktaylor/rad_analysis/data
 
-POOLS=($(ls -1 $TRIMDIR/*fastq.gz))
+POOLS=($(ls -1 $INDIR/*fastq.gz))
 BARCODES=($(ls -1 ../../../metadata/*barcode*))
 
 # make demultiplexed directory if it doesn't exist
@@ -41,8 +41,11 @@ process_radtags \
 -e sbfI \
 -c \
 -q \
--t 140 \
--s 20
+-t 145 \
+-s 20 \
+--adapter_1 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA \
+--adapter_2 AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC \
+--adapter_mm 2
 
 
 
