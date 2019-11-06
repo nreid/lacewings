@@ -28,7 +28,7 @@ mkdir -p ../results/demultiplexed_fastqs
 OUTDIR=../results/demultiplexed_fastqs
 
 FASTQ=$(echo ${POOLS[$SLURM_ARRAY_TASK_ID]})
-BC=$(echo ${POOLS[$SLURM_ARRAY_TASK_ID]})
+BC=$(echo ${BARCODES[$SLURM_ARRAY_TASK_ID]})
 
 
 process_radtags \
