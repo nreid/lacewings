@@ -22,9 +22,9 @@ echo This is array task number $SLURM_ARRAY_TASK_ID
 ADAPT=../../../metadata/TruSeq3-SE.fa
 
 INDIR=../results/demultiplexed_fastqs
-FASTQS=($(ls -1 $INDIR/*fastq.gz))
+FASTQS=($(ls -1 $INDIR/*fq.gz))
 INFILE=$(echo ${FASTQS[$SLURM_ARRAY_TASK_ID]} | sed 's/.*\///')
-OUTFILE=$(echo $INFILE | sed 's/fastq/trim.fastq/')
+OUTFILE=$(echo $INFILE | sed 's/fq/trim.fastq/')
 
 # make trimmed directory if it doesn't exist
 mkdir -p ../results/trimmed_data
