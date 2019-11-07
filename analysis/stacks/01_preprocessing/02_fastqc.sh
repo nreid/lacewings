@@ -29,7 +29,7 @@ FASTQS=($(ls -1 $INDIR/*fq.gz))
 mkdir -p ../results/fastqc_dm
 OUTDIR=../results/fastqc_dm
 
-FILE=${FASTQS[$SLURM_ARRAY_TASK_ID]}
+INFILE=${FASTQS[$SLURM_ARRAY_TASK_ID]}
 
 # run fastqc. "*fq" tells it to run on all fastq files in directory "../rawdata/"
-fastqc -t 6 -o $OUTDIR ../rawdata/*fq
+fastqc -t 6 -o $OUTDIR $INFILE
