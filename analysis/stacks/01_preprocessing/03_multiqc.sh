@@ -19,3 +19,6 @@ date
 module load MultiQC/1.7
 
 multiqc ../results/fastqc_dm
+
+mv multiqc_report.html ../results/fastqc_dm/
+mv multiqc_data ../results/fastqc_dm/
