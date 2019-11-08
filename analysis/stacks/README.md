@@ -20,8 +20,13 @@ The first set will be de novo. The second will be reference aligned.
 
 ### stacks de novo
 
-01. 02_de_novo
+01. 02_denovo/01_ustacks.sh
+
+- count up presumably variable sites in each individual(?):
 
 ```
-for file in *snps.tsv.gz;  do zcat $file | awk -v var=$file '{OFS="\t"} { if($7 !~ /-/){n+=1}} END {print var,n,NR,n/NR}'| cut -c 5- ; done | column | sort
+for file in *snps.tsv.gz;  do zcat $file | awk -v var=$file '{OFS="\t"} { if($7 !~ /-/){n+=1}} END {print var,n,NR,n/NR}'| cut -c 5- ; done | sort
 ```
+
+02. 02_denovo/02_cstacks.sh
+
