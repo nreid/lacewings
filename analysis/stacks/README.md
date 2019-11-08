@@ -22,7 +22,7 @@ The first set will be de novo. The second will be reference aligned.
 
 01. 02_denovo/01_ustacks.sh
 
-- count up presumably variable sites in each individual(?):
+	- count up presumably variable sites in each individual(?):
 
 ```
 for file in *snps.tsv.gz;  do zcat $file | awk -v var=$file '{OFS="\t"} { if($7 !~ /-/){n+=1}} END {print var,n,NR,n/NR}'| cut -c 5- ; done | sort
