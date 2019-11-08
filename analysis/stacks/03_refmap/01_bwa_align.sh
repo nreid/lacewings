@@ -39,7 +39,7 @@ SAM=$(echo $OUTFILE | sed 's/\..*//')
 RG=$(echo \@RG\\tID:$SAM\\tSM:$SAM)
 
 
-bwa mem -t 4 -R $RG $REFERENCE $INFILE | \
+bwa mem -t 4 -R $RG $REFERENCE $INDIR/$INFILE | \
 samtools view -S -h -u - | \
 samtools sort -T /scratch/$SAM - >$OUTDIR/$OUTFILE
 
