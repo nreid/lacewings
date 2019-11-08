@@ -14,6 +14,14 @@
 
 Results in two sets of fastq files, one straight from process_radtags, one that has also been trimmed. 
 
-The first set will be fed to ustacks. The second will be reference aligned. 
+The first set will be de novo. The second will be reference aligned. 
 
 ## Analysis
+
+### stacks de novo
+
+01. 02_de_novo
+
+```
+for file in *snps.tsv.gz;  do zcat $file | awk -v var=$file '{OFS="\t"} { if($7 !~ /-/){n+=1}} END {print var,n,NR,n/NR}'| cut -c 5- ; done | column | sort
+```
