@@ -16,6 +16,10 @@ Results in two sets of fastq files, one straight from process_radtags, one that 
 
 The first set will be de novo. The second will be reference aligned. 
 
+Do some investigating of sequence duplication and gc content using R script (and bioawk): plot_seq_abundances.R
+
+
+
 ## Analysis
 
 ### stacks de novo
@@ -30,3 +34,8 @@ for file in *snps.tsv.gz;  do zcat $file | awk -v var=$file '{OFS="\t"} { if($7 
 
 02. 02_denovo/02_cstacks.sh
 
+03. 02_denovo/03_sstacks.sh
+
+### ref map
+
+01. 03_refmap/01_bwa_align.sh
