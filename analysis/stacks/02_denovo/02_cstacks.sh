@@ -21,8 +21,9 @@ module load stacks/2.41
 # input, output files, directories
 INDIR=../results/denovo_ustacks
 
-mkdir -p ../results/denovo_cstacks
-OUTDIR=../results/denovo_cstacks
+# doesn't need an output directory? 
+# mkdir -p ../results/denovo_cstacks
+# OUTDIR=../results/denovo_cstacks
 
 # generate pop map if it doesn't exist
 paste \
@@ -32,4 +33,4 @@ paste \
 
 POPMAP=../../../metadata/popmap.txt
 
-cstacks -P $INDIR -o $OUTDIR -M $POPMAP -p 20 -n 15
+cstacks -P $INDIR -M $POPMAP -p 20 -n 15
