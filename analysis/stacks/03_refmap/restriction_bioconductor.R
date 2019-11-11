@@ -4,6 +4,8 @@ library(GenomicRanges)  # Provides GRanges, etc
 library(rtracklayer)    # Provides import() and export()
 
 
+# This R script finds sbf1 cut sites, flanking sites and writes them to bed files
+
 seqs <- readDNAStringSet("../results/redundans_metaquast_filtered.nomt.masked.fasta")
 
 mp <- vmatchPattern("CCTGCAGG",seqs)

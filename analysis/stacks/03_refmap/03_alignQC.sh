@@ -40,40 +40,20 @@ done
 mv $INDIR/*stats $OUTDIR
 
 # put the basic stats all in one file. 
-grep ^SN $OUTDIR/Pool1_BC01.bam.stats | cut -f 2 > $OUTDIR/SN.txt
-for file in $(find $OUTDIR -name "Pool*stats" | sort)
+
+FILES=($(find $OUTDIR -name "*bam.stats" | sort))
+
+grep "^SN" ${FILES[0]} | cut -f 2 > $OUTDIR/SN.txt
+for file in ${FILES[@]}
 do paste $OUTDIR/SN.txt <(grep ^SN $file | cut -f 3) > $OUTDIR/SN2.txt && \
 	mv $OUTDIR/SN2.txt $OUTDIR/SN.txt
 done
 
 # add a header
-find $OUTDIR -name "Pool*stats" | sort | sed 's/.bam.*//' | sed 's/.*\///' | tr "\n" "\t" | sed 's/\t$/\n/'>$OUTDIR/SN2.txt
-cat \n >>$OUTDIR/SN2.txt
-cat $OUTDIR/SN.txt >>.$OUTDIR/SN2.txt && \
+find $OUTDIR -name "*bam.stats" | sort | sed 's/.bam.*//' | sed 's/.*\///' | tr "\n" "\t" | sed 's/\t$/\n/'>$OUTDIR/SN2.txt
+# cat "\n" >>$OUTDIR/SN2.txt
+cat $OUTDIR/SN.txt >>$OUTDIR/SN2.txt && \
 	mv $OUTDIR/SN2.txt $OUTDIR/SN.txt
-
-# run featureCounts to get a sense of the number of fragments on RAD sites
-	# do left and right reads separately
-# first generate a SAF file for featureCounts:
-	# use dummy gene IDs
-
-cat ../../../metadata/sbf1_left.bed ../../../metadata/sbf1_right.bed | sort -V >sbf1_flanks.bed
-
-echo "GeneID	Chr	Start	End	Strand" >../../../metadata/sbf1_flanks.saf
-cat ../../../metadata/sbf1_flanks.bed | \
-awk '{OFS="\t"}{s=$2+1}{print NR,$1,s,$3,"+"}' >>../../../metadata/sbf1_flanks.saf
-
-# run featurecounts
-featureCounts \
--a ../../../metadata/sbf1_flanks.saf \
--o $OUTDIR/sbf1_flanks_counts.txt \
--Q 30 \
--F SAF \
---primary \
--p \
--T 12 \
-$(cat ../results/aligned_ref/bams.list | tr "\n" " ")
-
 
 
 

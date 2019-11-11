@@ -32,7 +32,7 @@ find $INDIR -name "*bam" >$INDIR/bams.list
 
 bamtools merge -list $INDIR/bams.list | \
 bamtools filter -in - -mapQuality ">30" | \
-samtools depth -d 100000 /dev/stdin | \
+samtools depth -d 300000 /dev/stdin | \
 bgzip > $OUTDIR/depthperbase.txt.gz
 
 
