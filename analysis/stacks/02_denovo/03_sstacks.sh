@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH --job-name=cstacks
+#SBATCH --job-name=sstacks
 #SBATCH --mail-user=noah.reid@uconn.edu
 #SBATCH --mail-type=ALL
 #SBATCH -o %x_%j.out

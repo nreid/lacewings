@@ -19,7 +19,6 @@ The first set will be de novo. The second will be reference aligned.
 Do some investigating of sequence duplication and gc content using R script (and bioawk): plot_seq_abundances.R
 
 
-
 ## Analysis
 
 ### stacks de novo
