@@ -1,4 +1,4 @@
-GeneIDChrStartEndStrand
+GeneID	Chr	Start	End	Strand
 1	scaffold00001	97992	97999	+
 2	scaffold00001	98010	98017	+
 3	scaffold00002	56500	56507	+
