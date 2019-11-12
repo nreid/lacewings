@@ -37,7 +37,7 @@ REFERENCE=../results/redundans_metaquast_filtered.nomt.masked.fasta
 # set a variable for the sites targeted
 TARGETS=../../../metadata/targets.bed
 
-freebayes -f $GEN -L $BAMLIST -t $TARGETS -m 30 -q 20 -k -V | \
+freebayes -f $REFERENCE -L $BAMLIST -t $TARGETS -m 30 -q 20 -k -V | \
 bgzip -c >$OUTDIR/chrysoperla.vcf.gz
 
 tabix -p vcf $OUTDIR/chrysoperla.vcf.gz
