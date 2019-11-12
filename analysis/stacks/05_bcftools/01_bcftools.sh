@@ -38,7 +38,7 @@ TARGETS=../../../metadata/targets.bed
 
 
 bcftools mpileup \
-	-f $REFEENCE \
+	-f $REFERENCE \
 	-b $BAMLIST \
 	-q 20 -Q 30 \
 	--targets-file $TARGETS | \
