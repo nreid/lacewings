@@ -8,14 +8,14 @@ library(beeswarm)
 # It writes out a set of target regions for variant calling. 
 
 # genomic intervals with coverage
-pr <- read.table("possibleradsites_counts.txt",stringsAsFactors=FALSE,header=TRUE)
+pr <- read.table("../results/trimmed_aligned_stats/possibleradsites_counts.txt",stringsAsFactors=FALSE,header=TRUE)
 colnames(pr)[-c(1:6)] <- str_extract(colnames(pr)[-c(1:6)],regex("[0-9]+[^.]+"))
 
 # sbf1 cut sites
-sbf1 <- read.table("../../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
+sbf1 <- read.table("../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
 
 # sbf1 + 1-off cut sites
-sbf1off <- read.table("../../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
+sbf1off <- read.table("../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
 
 
 # generate Granges objects
@@ -61,12 +61,12 @@ rr2 <- rr[keep]
 rroff2 <- rroff[keep]
 md2 <- md[keep]
 
+# scaled counts
+pr2s <- apply(pr2[,-c(1:6)],MAR=2,FUN=function(x){x/sum(x)*1e6})
+
 # vector to exclude low cov individuals
 colMeans(pr2s[md2 > 100,]>0) %>% plot()
 ind <- colMeans(pr2s[md2 > 100,]>0) > 0.5
-
-# scaled counts
-pr2s <- apply(pr2[,-c(1:6)],MAR=2,FUN=function(x){x/sum(x)*1e6})
 
 # plot missing data as a function of total coverage
 plot(log(rowSums(pr2s),10),rowSums(pr2s>0),col=rr2+rroff2+1)
@@ -83,7 +83,7 @@ beeswarm(log(tile,10) ~ cutstatus,pch=20,cex=.5)
 # write out target regions
 
 targets <- cbind(scaf=pr2[,2],start=pr2[,3]-1,end=pr2[,4])
-
+write.table(targets,"../../../metadata/targets.bed",sep="\t",quote=FALSE,col.names=FALSE,row.names=FALSE)
 
 
 
