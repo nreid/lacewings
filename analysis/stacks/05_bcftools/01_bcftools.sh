@@ -41,8 +41,9 @@ bcftools mpileup \
 	-f $REFERENCE \
 	-b $BAMLIST \
 	-q 20 -Q 30 \
+	-a "DP,AD"
 	--targets-file $TARGETS | \
-bcftools call -m -v -Oz -o chrysoperla.vcf.gz
+bcftools call -m -v -Oz -o $OUTDIR/chrysoperla.vcf.gz
 
 
 
