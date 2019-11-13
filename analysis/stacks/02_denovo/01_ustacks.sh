@@ -40,7 +40,8 @@ ustacks \
 -i $ID \
 --name $SAM \
 -M 8 \
--m 15 \
+-m 20 \
 -p 6 \
+--high-cov-thres 6 \
 -t gzfastq
 
