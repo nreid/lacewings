@@ -32,13 +32,15 @@ INFILE=$(echo ${FASTQS[$SLURM_ARRAY_TASK_ID]})
 ID=$(expr 1 + $SLURM_ARRAY_TASK_ID)
 SAM=$(echo $INFILE | grep -oP "[0-9]{3}[^\.]+")
 
+# set min coverage high
+
 ustacks \
 -f $INFILE \
 -o $OUTDIR \
 -i $ID \
 --name $SAM \
 -M 8 \
--m 3 \
+-m 15 \
 -p 6 \
 -t gzfastq
 
