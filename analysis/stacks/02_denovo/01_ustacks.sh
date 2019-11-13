@@ -42,6 +42,6 @@ ustacks \
 -M 8 \
 -m 20 \
 -p 6 \
---high-cov-thres 6 \
+--high-cov-thres 10 \
 -t gzfastq
 
