@@ -41,13 +41,6 @@ process_radtags \
 -i gzfastq \
 -y gzfastq \
 -e sbfI \
--c \
--q \
--t 145 \
--s 20 \
---adapter_1 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA \
---adapter_2 AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC \
---adapter_mm 2
-
-
+--disable-rad-check \
+-D 
 
