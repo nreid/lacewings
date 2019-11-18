@@ -162,4 +162,5 @@ for(i in 1:nrow(gt_dep_counts)){
 		)
 }
 
+# as expected, the empirical allele depth plot is nuts. 
 plot(sim_ad[,2],sim_ad[,3],col=as.factor(sim_ad[,1]),pch=20,cex=.2)
