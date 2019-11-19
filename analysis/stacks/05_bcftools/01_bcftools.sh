@@ -41,7 +41,7 @@ bcftools mpileup \
 	-f $REFERENCE \
 	-b $BAMLIST \
 	-q 20 -Q 30 \
-	--max-depth 5000 \
+	--max-depth 10000 \
 	-a "DP,AD" \
 	--targets-file $TARGETS | \
 bcftools call -m -v -Oz -o $OUTDIR/chrysoperla.vcf.gz
