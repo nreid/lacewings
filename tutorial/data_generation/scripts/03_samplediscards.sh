@@ -28,7 +28,7 @@ FASTQS=($(ls -1 $INDIR/pool*discards))
 
 PROP=0.25
 
-seqkit sample -p $PROP ${FASTQS[0]} | gzip >$$OUTDIR/$OUTFILE
-seqkit sample -p $PROP ${FASTQS[1]} | gzip >>$$OUTDIR/$OUTFILE
-seqkit sample -p $PROP ${FASTQS[2]} | gzip >>$$OUTDIR/$OUTFILE
+seqkit sample -p $PROP ${FASTQS[0]} | gzip >$OUTDIR/$OUTFILE
+seqkit sample -p $PROP ${FASTQS[1]} | gzip >>$OUTDIR/$OUTFILE
+seqkit sample -p $PROP ${FASTQS[2]} | gzip >>$OUTDIR/$OUTFILE
 
