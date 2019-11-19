@@ -16,4 +16,4 @@ INDIR=../results/denovo_ustacks
 
 POPMAP=../../../metadata/popmap.txt
 
-populations -P $INDIR -M $POPMAP -R 0.65 --vcf --fasta-samples --treemix -t 8
+populations -P $INDIR -M $POPMAP -R 0.1 --vcf --fasta-samples --treemix -t 8

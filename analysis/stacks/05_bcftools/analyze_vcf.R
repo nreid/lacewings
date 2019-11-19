@@ -105,8 +105,9 @@ for(i in 1:length(uspec)){
 
 }
 
-ftr <- dist(sharedmat) %>% nj()
+ftr <- dist(sharedmat) %>% nj() %>% midpoint.root()
 
+plot(ftr)
 
 # look at heterozygote deficits
 
@@ -126,12 +127,23 @@ sim <- apply(
 plot(jitter(fd[cd[,species]==7,species]^2,factor=5),jitter(gtf[,3]/nsam),pch=20,col=rgb(0,0,0,.3))
 points(jitter(((sim[,2]+2*sim[,3])/(nsam*2))^2,factor=5),jitter(sim[,3])/nsam,pch=20,col=rgb(1,0,0,.3))
 
-
+par(mfrow=c(1,2))
+plot(jitter(fd[cd[,species]==7,species]^2,factor=5),jitter(gtf[,3]/nsam),pch=20,col=rgb(0,0,0,.3))
+abline(0,1)
+plot(jitter(((sim[,2]+2*sim[,3])/(nsam*2))^2,factor=5),jitter(sim[,3])/nsam,pch=20,col=rgb(1,0,0,.3))
+abline(0,1)
 
 # look at allele depths
-gtmat <- head(vcf2[,-c(1:9)],n=5000) %>% unlist() %>% str_split(.,":|,") %>% do.call(rbind,.) %>% data.frame(.,stringsAsFactors=FALSE)
+# pick a species
+species <- "calocedrii"
 
-sg <- as.numeric(gtmat[,5]) > 15
+# sites that vary within that species
+sites <- which((rowMeans(gts[,spec==species],na.rm=TRUE) > 0) & (rowMeans(gts[,spec==species],na.rm=TRUE) < 1))
+
+gtmat <- head(vcf2[sites,-c(1:9)],n=20000)[,spec==species] %>% unlist() %>% str_split(.,":|,") %>% do.call(rbind,.) %>% data.frame(.,stringsAsFactors=FALSE)
+for(i in 2:7){gtmat[,i] <- as.numeric(gtmat[,i])}
+
+sg <- as.numeric(gtmat[,5]) > 15 #& as.numeric(gtmat[,6]) > 0 & as.numeric(gtmat[,7]) > 0
 
 plot(as.numeric(gtmat[sg,6]),as.numeric(gtmat[sg,7]),col=as.factor(gtmat[sg,1]),pch=20,cex=.2)
 
@@ -164,3 +176,9 @@ for(i in 1:nrow(gt_dep_counts)){
 
 # as expected, the empirical allele depth plot is nuts. 
 plot(sim_ad[,2],sim_ad[,3],col=as.factor(sim_ad[,1]),pch=20,cex=.2)
+
+# total site depth:
+
+str_extract(vcf2[,8],regex("(?<=DP=)[0-9]+")) %>% as.numeric() %>% log(.,10) %>% hist(.,breaks=100)
+
+
