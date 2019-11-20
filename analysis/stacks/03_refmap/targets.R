@@ -17,6 +17,10 @@ sbf1 <- read.table("../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
 # sbf1 + 1-off cut sites
 sbf1off <- read.table("../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
 
+# SN stats from samtools
+
+sn <- read.table("../results/trimmed_aligned_stats/SN.txt",stringsAsFactors=FALSE,header=TRUE,sep="\t",quote="")
+sn <- t(sn)
 
 # generate Granges objects
 prg <- GRanges(
