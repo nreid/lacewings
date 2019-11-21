@@ -27,9 +27,12 @@ REFERENCE=/home/FCAM/ktaylor/rad_phy/reference_genomes/redundans_metaquast_filte
 FASTA=../results/denovo_ustacks/populations.loci.fa
 BAM=../results/denovo_ustacks/populations.loci.bam
 BED=../results/denovo_ustacks/populations.loci.bed
+BED2=../results/denovo_ustacks/populations.loci.cutsites.bed
 
 bwa mem -t 4 $REFERENCE $FASTA | \
 samtools view -S -h -u - | \
 samtools sort -T /scratch/$BAM - >$BAM
 
 bedtools bamtobed -i $BAM >$BED
+
+bedtools intersect -a ../../../metadata/sbf1_off.bed -b $BED -loj >$BED2

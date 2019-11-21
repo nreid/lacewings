@@ -33,4 +33,4 @@ paste \
 
 POPMAP=../../../metadata/popmap.txt
 
-cstacks -P $INDIR -M $POPMAP -p 20 -n 15
+cstacks -P $INDIR -M $POPMAP -p 20 --max-gaps 10 -n 15

@@ -22,6 +22,9 @@ sbf1off <- read.table("../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
 sn <- read.table("../results/trimmed_aligned_stats/SN.txt",stringsAsFactors=FALSE,header=TRUE,sep="\t",quote="")
 sn <- t(sn)
 
+plot(sn[,1],sn[,7]/sn[,1])
+text(sn[,1],sn[,7]/sn[,1],labels=rownames(sn))
+
 # generate Granges objects
 prg <- GRanges(
 	seqnames = pr[,2],

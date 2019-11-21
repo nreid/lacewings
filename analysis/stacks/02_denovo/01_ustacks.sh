@@ -42,6 +42,7 @@ ustacks \
 -M 8 \
 -m 30 \
 -p 6 \
+--max-gaps 10 \
 --high-cov-thres 10 \
 -t gzfastq
 
