@@ -15,12 +15,13 @@ colnames(pr)[-c(1:6)] <- str_extract(colnames(pr)[-c(1:6)],regex("[0-9]+[^.]+"))
 sbf1 <- read.table("../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
 
 # sbf1 + 1-off cut sites
-sbf1off <- read.table("../../../metadata/sbf1.bed",stringsAsFactors=FALSE)
+sbf1off <- read.table("../../../metadata/sbf1_off.bed",stringsAsFactors=FALSE)
 
 # SN stats from samtools
 
 sn <- read.table("../results/trimmed_aligned_stats/SN.txt",stringsAsFactors=FALSE,header=TRUE,sep="\t",quote="")
 sn <- t(sn)
+rownames(sn) <- rownames(sn) %>% gsub(".([0-9][^\\.]*).trim","\\1",.)
 
 plot(sn[,1],sn[,7]/sn[,1])
 text(sn[,1],sn[,7]/sn[,1],labels=rownames(sn))
@@ -43,6 +44,7 @@ sbf1offg <- GRanges(
 
 
 # get overlaps between coverage intervals and cut sites
+# warnings are fine. 
 olaps <- findOverlaps(prg,sbf1g) %>% as.matrix()
 olapsoff <- findOverlaps(prg,sbf1offg) %>% as.matrix()
 
