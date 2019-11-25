@@ -12,6 +12,13 @@
 #SBATCH -e %x_%j.err
 
 
+hostname
+date
+
+# load software
+module load stacks/2.41
+
+
 INDIR=../results/calocedrii_test
 
 POPMAP=../../../metadata/popmap_calocedrii.txt
