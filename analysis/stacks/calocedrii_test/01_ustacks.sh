@@ -9,7 +9,7 @@
 #SBATCH --mem=5G
 #SBATCH --partition=general
 #SBATCH --qos=general
-#SBATCH --array=[0-140]%20
+#SBATCH --array=[0-7]
 
 echo "host name : " `hostname`
 echo This is array task number $SLURM_ARRAY_TASK_ID
