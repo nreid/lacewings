@@ -29,4 +29,4 @@ POPMAP=../../../metadata/popmap.txt
 cat $POPMAP | sed 's/\s/.trim\t/' >${POPMAP}.trim
 POPMAP=../../../metadata/popmap.txt.trim
 
-ref_map.pl --samples $INDIR -s trim --popmap $POPMAP -o $OUTDIR -T 10
+ref_map.pl --samples $INDIR --popmap $POPMAP -o $OUTDIR -T 10
