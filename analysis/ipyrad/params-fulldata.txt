@@ -3,7 +3,7 @@ fulldata                       ## [0] [assembly_name]: Assembly name. Used to na
 ./results                      ## [1] [project_dir]: Project dir (made in curdir if not present)
                                ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
                                ## [3] [barcodes_path]: Location of barcodes file
-../stacks/results/trimmed_data/*fq.gz    ## [4] [sorted_fastq_path]: Location of demultiplexed/sorted fastq files
+../stacks/results/trimmed_data/*fastq.gz    ## [4] [sorted_fastq_path]: Location of demultiplexed/sorted fastq files
 denovo                         ## [5] [assembly_method]: Assembly method (denovo, reference, denovo+reference, denovo-reference)
                                ## [6] [reference_sequence]: Location of reference sequence file
 rad                            ## [7] [datatype]: Datatype (see docs): rad, gbs, ddrad, etc.
