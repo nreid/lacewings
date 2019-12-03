@@ -16,6 +16,14 @@ date
 
 module load ipyrad/0.7.22
 
+ipyrad -p params-fulldata.txt -s 1
+
+echo step 1 done
+
+ipyrad -p params-fulldata.txt -s 2
+
+echo step 2 done
+
 ipyrad -p params-fulldata.txt -s 3
 
 echo step 3 done
