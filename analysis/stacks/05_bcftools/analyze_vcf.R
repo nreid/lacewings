@@ -1,6 +1,7 @@
 library(tidyverse)
 library(ape)
 library(phytools)
+library(lattice)
 
 f <- pipe('gzcat ../results/bcftools/chrysoperla.vcf.gz | head -n 50000 | grep "CHROM"')
 h <- scan(f,what="character")

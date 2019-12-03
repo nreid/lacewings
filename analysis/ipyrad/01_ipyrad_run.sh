@@ -1,0 +1,38 @@
+#!/bin/bash 
+#SBATCH --job-name=ipyrad_full
+#SBATCH -n 1
+#SBATCH -N 1
+#SBATCH -c 8
+#SBATCH --mem=50G
+#SBATCH --qos=general
+#SBATCH --partition=general
+#SBATCH --mail-user=
+#SBATCH --mail-type=ALL
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+hostname
+date
+
+module load ipyrad/0.7.22
+
+ipyrad -p params-fulldata.txt -s 3
+
+echo step 3 done
+
+ipyrad -p params-fulldata.txt -s 4
+
+echo step 4 done
+
+ipyrad -p params-fulldata.txt -s 5
+
+echo step 5 done
+
+ipyrad -p params-fulldata.txt -s 6
+
+echo step 6 done
+
+ipyrad -p params-fulldata.txt -s 7
+
+echo step 7 done
+
