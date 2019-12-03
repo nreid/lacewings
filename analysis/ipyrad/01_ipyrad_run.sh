@@ -16,6 +16,13 @@ date
 
 module load ipyrad/0.7.22
 
+
+# create population file:
+
+cat ../../metadata/popmap.txt >../../metadata/popmap.ipyrad.txt
+POP=../../metadata/popmap.ipyrad.txt
+cut -f 2 ../../metadata/popmap.txt | sort | uniq | sed 's/$/:0 /' | tr "\n" " " >>$POP
+
 ipyrad -p params-fulldata.txt -s 1
 
 echo step 1 done
