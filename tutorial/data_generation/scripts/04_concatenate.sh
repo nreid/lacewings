@@ -22,14 +22,15 @@ FASTQS=($(ls -1 $INDIR/*fq.gz))
 # concatenate sequences
 cat ${FASTQS[@]} >$INDIR/prepool.fq.gz
 
-# shuffle sequences
-zcat $INDIR/prepool.fq.gz | \
-awk '{OFS="\t"; getline seq; \
-                getline sep; \
-                getline qual; \
-                print $0,seq,sep,qual}' | \
-shuf | \
-awk '{OFS="\n"; print $1,$2,$3,$4}' | \
-gzip >$INDIR/pool.fq.gz
+# # shuffle sequences
+# # not worth the time
+# zcat $INDIR/prepool.fq.gz | \
+# awk '{OFS="\t"; getline seq; \
+#                 getline sep; \
+#                 getline qual; \
+#                 print $0,seq,sep,qual}' | \
+# shuf | \
+# awk '{OFS="\n"; print $1,$2,$3,$4}' | \
+# gzip >$INDIR/pool.fq.gz
 
 
