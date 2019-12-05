@@ -18,7 +18,7 @@ TGCAGG,                        ## [8] [restriction_overhang]: Restriction overha
 0                              ## [16] [filter_adapters]: Filter for adapters/primers (1 or 2=stricter)
 35                             ## [17] [filter_min_trim_len]: Min length of reads after adapter trim
 2                              ## [18] [max_alleles_consens]: Max alleles per site in consensus sequences
-5, 5                           ## [19] [max_Ns_consens]: Max N's (uncalled bases) in consensus (R1, R2)
+0.05                             ## [19] [max_Ns_consens]: Max N's (uncalled bases) in consensus (R1, R2)
 20, 20                           ## [20] [max_Hs_consens]: Max Hs (heterozygotes) in consensus (R1, R2)
 4                              ## [21] [min_samples_locus]: Min # samples per locus for output
 25, 25                         ## [22] [max_SNPs_locus]: Max # SNPs per locus (R1, R2)
