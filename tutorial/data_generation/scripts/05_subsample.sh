@@ -24,3 +24,7 @@ FULLPOOL=prepool.fq.gz
 PROP=0.1
 
 seqkit sample -p $PROP $INDIR/$FULLPOOL | gzip >$INDIR/pool.fq.gz
+
+mkdir -p  ../../results
+
+mv $INDIR/pool.fq.gz ../../results

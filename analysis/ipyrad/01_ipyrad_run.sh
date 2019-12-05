@@ -23,31 +23,31 @@ cat ../../metadata/popmap.txt >../../metadata/popmap.ipyrad.txt
 POP=../../metadata/popmap.ipyrad.txt
 cut -f 2 ../../metadata/popmap.txt | sort | uniq | sed 's/$/:0 /' | tr "\n" " " | sed 's/^/# /' >>$POP
 
-ipyrad -p params-fulldata.txt -s 1 -c 32
+ipyrad -p params-fulldata09.txt -s 1 -c 32
 
 echo step 1 done
 
-ipyrad -p params-fulldata.txt -s 2 -c 32
+ipyrad -p params-fulldata09.txt -s 2 -c 32
 
 echo step 2 done
 
-ipyrad -p params-fulldata.txt -s 3 -c 32
+ipyrad -p params-fulldata09.txt -s 3 -c 32
 
 echo step 3 done
 
-ipyrad -p params-fulldata.txt -s 4 -c 32
+ipyrad -p params-fulldata09.txt -s 4 -c 32
 
 echo step 4 done
 
-ipyrad -p params-fulldata.txt -s 5 -c 32
+ipyrad -p params-fulldata09.txt -s 5 -c 32
 
 echo step 5 done
 
-ipyrad -p params-fulldata.txt -s 6 -c 32
+ipyrad -p params-fulldata09.txt -s 6 -c 32
 
 echo step 6 done
 
-ipyrad -p params-fulldata.txt -s 7 -c 32
+ipyrad -p params-fulldata09.txt -s 7 -c 32
 
 echo step 7 done
 
