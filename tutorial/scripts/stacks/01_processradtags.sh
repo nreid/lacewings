@@ -16,13 +16,13 @@ echo "host name : " `hostname`
 module load stacks/2.41
 
 #input/output directories, supplementary files
-INDIR=../results
+INDIR=../../results
 
 POOL=$INDIR/pool.fq.gz
-BARCODES=../metadata/henrysamples.txt
+BARCODES=../../metadata/henrysamples.txt
 
 # make demultiplexed directory if it doesn't exist
-OUTDIR=../results/demultiplexed_fastqs
+OUTDIR=$INDIR/demultiplexed_fastqs
 mkdir -p $OUTDIR
 
 echo demultiplexing file $FASTQ using barcode set $BC
