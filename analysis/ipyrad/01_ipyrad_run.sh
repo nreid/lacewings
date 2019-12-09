@@ -19,27 +19,27 @@ module load ipyrad/0.9.19
 
 # create population file:
 
-cat ../../metadata/popmap.txt >../../metadata/popmap.ipyrad.txt
 POP=../../metadata/popmap.ipyrad.txt
+cat ../../metadata/popmap.txt | sed 's/\t/.trim\t/' >$POP
 cut -f 2 ../../metadata/popmap.txt | sort | uniq | sed 's/$/:0 /' | tr "\n" " " | sed 's/^/# /' >>$POP
 
-# ipyrad -p params-fulldata09.txt -s 1 -c 32
+ipyrad -p params-fulldata09.txt -s 1 -c 32
 
 echo step 1 done
 
-# ipyrad -p params-fulldata09.txt -s 2 -c 32
+ipyrad -p params-fulldata09.txt -s 2 -c 32
  
 echo step 2 done
 
-# ipyrad -p params-fulldata09.txt -s 3 -c 32
+ipyrad -p params-fulldata09.txt -s 3 -c 32
 
 echo step 3 done
 
-# ipyrad -p params-fulldata09.txt -s 4 -c 32
+ipyrad -p params-fulldata09.txt -s 4 -c 32
 
 echo step 4 done
 
-# ipyrad -p params-fulldata09.txt -s 5 -c 32
+ipyrad -p params-fulldata09.txt -s 5 -c 32
 
 echo step 5 done
 
