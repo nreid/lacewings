@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=process_radtags
+#SBATCH --job-name=process_radtags_full
 #SBATCH -o %x_%A_%a.out
 #SBATCH -e %x_%A_%a.err
 #SBATCH --mail-type=ALL
@@ -16,13 +16,12 @@ echo "host name : " `hostname`
 module load stacks/2.41
 
 #input/output directories, supplementary files
-INDIR=../../results
+POOL=../../data_generation/results/prepended_fastqs/prepool.fq.gz
 
-POOL=$INDIR/pool.fq.gz
 BARCODES=../../metadata/henrysamples.txt
 
 # make demultiplexed directory if it doesn't exist
-OUTDIR=$INDIR/demultiplexed_fastqs
+OUTDIR=../../results/demultiplexed_fastqs_FULL
 mkdir -p $OUTDIR
 
 process_radtags \
