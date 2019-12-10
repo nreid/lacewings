@@ -12,7 +12,7 @@
 #SBATCH -e %x_%j.err
 
 
-INDIR=../../results/denovo_ustacks
+INDIR=../../results/denovo
 
 POPMAP=../../metadata/popmap.txt
 

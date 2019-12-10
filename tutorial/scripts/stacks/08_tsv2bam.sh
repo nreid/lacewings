@@ -20,7 +20,7 @@ module load stacks/2.41
 
 # input, output files, directories
 
-INDIR=../../results/denovo_ustacks
+INDIR=../../results/denovo
 
 POPMAP=../../metadata/popmap.txt
 
