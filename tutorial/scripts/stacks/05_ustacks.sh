@@ -22,7 +22,7 @@ INDIR=../../results/demultiplexed_fastqs
 FASTQS=($(ls -1 $INDIR/*fq.gz))
 
 # make output directory if it doesn't exist
-OUTDIR=../results/denovo
+OUTDIR=../../results/denovo
 mkdir -p $OUTDIR
 
 INFILE=$(echo ${FASTQS[$SLURM_ARRAY_TASK_ID]})
@@ -40,7 +40,7 @@ ustacks \
 -i $ID \
 --name $SAM \
 -M 8 \
--m 30 \
+-m 3 \
 -p 6 \
 --max-gaps 10 \
 --high-cov-thres 10 \
