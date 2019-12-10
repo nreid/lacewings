@@ -26,7 +26,7 @@ OUTDIR=../../results/aligned
 mkdir -p $OUTDIR
 
 # indexed reference genome
-REFERENCE=../../genome/redundans_metaquast_filtered.nomt.masked.fasta
+REFERENCE=../../../genome/redundans_metaquast_filtered.nomt.masked.fasta
 
 FASTQS=($(ls -1 $INDIR/*.fastq.gz))
 
