@@ -30,4 +30,10 @@ cat $POPMAP | sed 's/\s/.trim\t/' >${POPMAP}.trim
 POPMAP=${POPMAP}.trim
 
 # refmap.pl -s option is broken. 
-ref_map.pl --samples $INDIR --popmap $POPMAP -o $OUTDIR -T 10
+ref_map.pl \
+--samples $INDIR \
+--popmap $POPMAP \
+-o $OUTDIR \
+-T 10 \
+-X "populations:--fasta-samples" \
+-X "populations:--fasta-loci"
