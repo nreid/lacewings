@@ -34,7 +34,8 @@ mkdir -p $OUTDIR
 REFERENCE=../../../genome/redundans_metaquast_filtered.nomt.masked.fasta
 
 # set a variable for the sites targeted
-TARGETS=../../../metadata/targets.bed
+# skipping targets file for now. 
+# TARGETS=../../../metadata/targets.bed
 
 
 bcftools mpileup \
@@ -43,7 +44,6 @@ bcftools mpileup \
 	-q 20 -Q 30 \
 	--max-depth 10000 \
 	-a "DP,AD" \
-	--targets-file $TARGETS | \
 bcftools call -m -v -Oz -o $OUTDIR/chrysoperla.vcf.gz
 
 
