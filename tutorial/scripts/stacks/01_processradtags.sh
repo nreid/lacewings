@@ -38,7 +38,7 @@ process_radtags \
 -s 20 \
 --adapter_1 AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA \
 --adapter_2 AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC \
---adapter_mm 2
+--adapter_mm 0
 
 
 
