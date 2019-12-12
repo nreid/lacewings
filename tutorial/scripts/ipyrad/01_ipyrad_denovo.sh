@@ -27,31 +27,11 @@ paste <(cut -f 2 $BC) <(cut -f 1 $BC) >$BCP
 paste <(cut -f 2 $BC) <(cut -f 2 $BC | sed 's/^....//') >$POP
 cut -f 2 ../../metadata/popmap.txt | sort | uniq | sed 's/$/:0 /' | tr "\n" " " | sed 's/^/# /' >>$POP
 
-ipyrad -p params-henryetal_denovo.txt -s 1 -c 32 -r 
+# create output directory
 
-echo step 1 done
+mkdir -p ../../results/ipyrad/denovo
 
-ipyrad -p params-henryetal_denovo.txt -s 2 -c 32 -r 
- 
-echo step 2 done
+# run ipyrad
 
-ipyrad -p params-henryetal_denovo.txt -s 3 -c 32 -r 
-
-echo step 3 done
-
-ipyrad -p params-henryetal_denovo.txt -s 4 -c 32 -r 
-
-echo step 4 done
-
-ipyrad -p params-henryetal_denovo.txt -s 5 -c 32 -r 
-
-echo step 5 done
-
-ipyrad -p params-henryetal_denovo.txt -s 6 -c 32 -d  -r 
-
-echo step 6 done
-
-ipyrad -p params-henryetal_denovo.txt -s 7 -c 32 -d  -r 
-
-echo step 7 done
+ipyrad -p params-henryetal_denovo.txt -s 1234567 -c 32 -r 
 
