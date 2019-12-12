@@ -2,11 +2,11 @@
 #SBATCH --job-name=ipyrad_full
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH -c 16
+#SBATCH -c 32
 #SBATCH --mem=50G
 #SBATCH --qos=general
 #SBATCH --partition=general
-#SBATCH --mail-user=
+#SBATCH --mail-user=noah.reid@gmail.com
 #SBATCH --mail-type=ALL
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
