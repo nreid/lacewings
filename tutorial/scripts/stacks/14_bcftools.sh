@@ -43,7 +43,7 @@ bcftools mpileup \
 	-b $BAMLIST \
 	-q 20 -Q 30 \
 	--max-depth 10000 \
-	-a "DP,AD" \
+	-a "DP,AD" | \
 bcftools call -m -v -Oz -o $OUTDIR/chrysoperla.vcf.gz
 
 
