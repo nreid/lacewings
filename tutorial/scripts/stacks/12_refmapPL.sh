@@ -35,5 +35,7 @@ ref_map.pl \
 --popmap $POPMAP \
 -o $OUTDIR \
 -T 10 \
+-X "populations:--vcf" \
+-X "populations:--treemix" \
 -X "populations:--fasta-samples" \
 -X "populations:--fasta-loci"
