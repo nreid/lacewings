@@ -1,5 +1,5 @@
 ------- ipyrad params file (v.0.9.19)-------------------------------------------
-denovo                         ## [0] [assembly_name]: Assembly name. Used to name output directories for assembly steps
+refmap                         ## [0] [assembly_name]: Assembly name. Used to name output directories for assembly steps
 ../../results/ipyrad/refmap    ## [1] [project_dir]: Project dir (made in curdir if not present)
 ../../results/pool.fq.gz       ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
 ../../metadata/henrysamples_ipyrad.txt       ## [3] [barcodes_path]: Location of barcodes file

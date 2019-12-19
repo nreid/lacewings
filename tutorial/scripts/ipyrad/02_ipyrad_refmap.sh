@@ -1,5 +1,5 @@
 #!/bin/bash 
-#SBATCH --job-name=ipyrad_full
+#SBATCH --job-name=ipyrad_refmap
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH -c 16
