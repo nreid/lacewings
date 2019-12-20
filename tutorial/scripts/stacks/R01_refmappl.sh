@@ -20,8 +20,8 @@ module load stacks/2.41
 
 # input, output files, directories
 
-INDIR=../../results/aligned
-OUTDIR=../../results/stacks_refmap
+INDIR=../../data/aligned
+OUTDIR=../../results/stacks/refmap
 mkdir -p $OUTDIR
 
 # popmap file with .trim suffix

@@ -17,12 +17,12 @@ echo This is array task number $SLURM_ARRAY_TASK_ID
 module load stacks/2.41
 
 #input/output directories, supplementary files
-INDIR=../../results/demultiplexed_fastqs
+INDIR=../../data/demultiplexed_fastqs
 
 FASTQS=($(ls -1 $INDIR/*fq.gz))
 
 # make output directory if it doesn't exist
-OUTDIR=../../results/denovo
+OUTDIR=../../results/stacks/denovo
 mkdir -p $OUTDIR
 
 INFILE=$(echo ${FASTQS[$SLURM_ARRAY_TASK_ID]})

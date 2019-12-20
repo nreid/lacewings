@@ -19,11 +19,7 @@ date
 module load stacks/2.41
 
 # input, output files, directories
-INDIR=../../results/denovo
-
-# doesn't need an output directory? 
-# mkdir -p ../results/denovo_cstacks
-# OUTDIR=../results/denovo_cstacks
+INDIR=../../results/stacks/denovo
 
 # generate pop map if it doesn't exist
 POPMAP=../../metadata/popmap.txt
