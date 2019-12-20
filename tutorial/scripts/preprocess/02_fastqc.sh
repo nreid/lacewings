@@ -32,3 +32,5 @@ INFILE=${FASTQS[$SLURM_ARRAY_TASK_ID]}
 
 # run fastqc. "*fq" tells it to run on all fastq files in directory "../rawdata/"
 fastqc -t 2 -o $OUTDIR $INFILE
+
+date

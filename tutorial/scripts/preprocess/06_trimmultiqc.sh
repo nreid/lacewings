@@ -22,3 +22,5 @@ multiqc ../../results/fastqc_trim
 
 mv multiqc_report.html ../../results/fastqc_trim
 mv multiqc_data ../../results/fastqc_trim
+
+date

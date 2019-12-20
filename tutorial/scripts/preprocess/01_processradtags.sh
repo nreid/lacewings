@@ -10,8 +10,8 @@
 #SBATCH --partition=general
 #SBATCH --qos=general
 
-
-echo "host name : " `hostname`
+hostname
+date
 
 module load stacks/2.41
 
@@ -40,5 +40,4 @@ process_radtags \
 --adapter_2 AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC \
 --adapter_mm 0
 
-
-
+date
