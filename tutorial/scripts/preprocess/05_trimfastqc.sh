@@ -22,10 +22,10 @@ module load fastqc
 
 #input/output directories, supplementary files
 
-INDIR=../../data/demultiplexed_fastqs
+INDIR=../../data/trimmed_data
 FASTQS=($(ls -1 $INDIR/*fq.gz))
 
-OUTDIR=../../results/fastqc_dm
+OUTDIR=../../results/fastqc_trim
 mkdir -p $OUTDIR
 
 INFILE=${FASTQS[$SLURM_ARRAY_TASK_ID]}

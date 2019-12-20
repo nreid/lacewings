@@ -25,6 +25,6 @@ PROP=0.1
 
 seqkit sample -p $PROP $INDIR/$FULLPOOL | gzip >$INDIR/pool.fq.gz
 
-mkdir -p  ../../results
+mkdir -p  ../../data
 
-mv $INDIR/pool.fq.gz ../../results
+mv $INDIR/pool.fq.gz ../../data
