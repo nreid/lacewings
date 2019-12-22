@@ -23,7 +23,7 @@ module load fastqc
 #input/output directories, supplementary files
 
 INDIR=../../data/trimmed_data
-FASTQS=($(ls -1 $INDIR/*fq.gz))
+FASTQS=($(ls -1 $INDIR/*fastq.gz))
 
 OUTDIR=../../results/fastqc_trim
 mkdir -p $OUTDIR
