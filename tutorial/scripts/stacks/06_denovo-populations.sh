@@ -12,6 +12,12 @@
 #SBATCH -e %x_%j.err
 
 
+hostname
+date
+
+# load software
+module load stacks/2.41
+
 INDIR=../../results/stacks/denovo
 
 POPMAP=../../metadata/popmap.txt
