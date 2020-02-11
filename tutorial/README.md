@@ -11,19 +11,17 @@ Basic editing of all scripts can be performed on the server with tools such as n
 
 ### Introduction
 
-Restriction-associated DNA sequencing (RAD-seq) approaches are a collection of methods used to assay genetic variation in groups of individuals. These approaches are a form of **reduced representation sequencing**. This means that some relatively small fraction of sites in the genome, usually widely dispersed, are targeted for sequencing. This is accomplished by digesting the genome using 1 or more restriction enzymes, and sequencing DNA adjacent to the cut site(s). Many types of questions (see discussion in Lowry et al. 2016 and Catchen et al. 2017) do not necessarily require the kind of genomically dense data produced by whole genome sequencing (WGS), so RAD-seq provides two benefits: 
+Restriction-site associated DNA sequencing (RAD-seq) approaches are a collection of methods used to assay genetic variation in groups of individuals. These approaches are a form of **reduced representation sequencing**. This means that some relatively small fraction of sites in the genome, usually widely dispersed, are targeted for sequencing. This is accomplished by digesting the genome using 1 or more restriction enzymes, and sequencing DNA adjacent to the cut site(s). Many types of questions (see discussion in Lowry et al. 2016 and Catchen et al. 2017) do not necessarily require the kind of genomically dense data produced by whole genome sequencing (WGS), so RAD-seq provides two benefits: 
 
 - It is cost effective, allowing a much larger number of individuals to be genotyped than an equivalent WGS study. 
 - It is computationally effective. A data file containing genotypes for several thousand sites is much more portable and easy to analyze than one potentially containing tens of millions of sites. 
 
-This tutorial will cover two popular software packages for analyzing RAD data. For each it will demonstrate two approaches for generating genotypes: _de novo_ assembly and reference mapping. 
+For a useful review of RAD-seq methods, see Andrews et al. (2016). This tutorial will cover two popular software packages for analyzing RAD data. For each it will demonstrate two approaches for generating genotypes: _de novo_ assembly and reference mapping. 
 
 
 ### Sources of data:
 
-In this tutorial we will use data from two sources. 
-
-The first source of data is **Henry et al. 2019** (HTJ):
+In this tutorial we will use data from two sources. The first is Henry et al. 2019 (HTJ):
 
     Henry, Charles S., Katherine L. Taylor, and James B. Johnson. "A new lacewing species of the Chrysoperla carnea species-group from central Asia associated with conifers (Neuroptera: Chrysopidae)." Journal of Natural History 53.21-22 (2019): 1277-1300.
 
@@ -37,13 +35,66 @@ Scripts for exploratory analysis of the entire dataset are located in "../analys
 
 The second source of data is an unpublished dataset by Wegrzyn and colleagues (WEA). It's a genetic association study of resistance of the green ash _Fraxinus pennsylvanica_ to an invasive beetle, the emerald ash borer (_Agrilus planipennis_). 
 
-The total dataset consists of 6 libraries of 10-16 barcoded samples. WEA use ddRAD (Peterson et al. 2012). In ddRAD, 2 enzymes are used to digest genomic DNA and only fragments cut by both enzymes are sequenced. WEA additionally use 
+The total dataset consists of 6 libraries of 10-16 barcoded samples. WEA use ddRAD (Peterson et al. 2012). In ddRAD, 2 enzymes are used to digest genomic DNA and only fragments cut by both enzymes are sequenced. WEA additionally use degenerate 
 
 
+__Structure:__
+
+1. [ Lacewings - preprocess data ]()
+
+	a. [ Lacewings - Stacks _de novo_ ]()
+
+	b. [ Lacewings - Stacks reference mapping ]()
+
+	c. [ Lacewings - ipyrad _de novo_ ]()
+
+	d. [ Lacewings - ipyrad reference mapping ]()
+
+2. [ Green ash - preprocess data ]()
+
+	a. [ Green ash - Stacks _de novo_ ]()
+
+	b. [ Green ash - Stacks reference mapping ]()
+
+	c. [ Green ash - ipyrad _de novo_ ]()
+
+	d. [ Green ash - ipyrad reference mapping ]()
+
+
+__Required software tools:__ !!!CHECK THIS LIST!!!
+
+_quality control_  
+- [ FastQC ](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+
+_alignment_  
+- [ bwa ](http://bio-bwa.sourceforge.net/)
+
+_sequence alignment manipulation and visualization_ 
+- [ samtools ](http://www.htslib.org/doc/samtools.html)
+- [ picard ](https://broadinstitute.github.io/picard/)
+- [ samblaster ](https://github.com/GregoryFaust/samblaster)
+- [ bamtools ](https://github.com/pezmaster31/bamtools)  
+- [ igv ](https://software.broadinstitute.org/software/igv/)
+
+_variant calling_  
+- [ stacks ](http://catchenlab.life.illinois.edu/stacks/)
+- [ ipyrad ](https://ipyrad.readthedocs.io/en/latest/)
+- [ bcftools ](http://www.htslib.org/doc/bcftools.html)
+- [ freebayes ](https://github.com/ekg/freebayes)
+- [ GATK ](https://software.broadinstitute.org/gatk/)  
+
+_other utilities_  
+- [ bgzip ](http://www.htslib.org/doc/bgzip.html)
+- [ tabix ](http://www.htslib.org/doc/tabix.html)
+- [ bedtools ](https://bedtools.readthedocs.io/en/latest/)
+- [ vcflib ](https://github.com/vcflib/vcflib)
+- [ vt ](https://github.com/atks/vt)
 
 
 
 ### References
+
+Andrews, Kimberly R., Jeffrey M. Good, Michael R. Miller, Gordon Luikart, and Paul A. Hohenlohe. 2016. “Harnessing the Power of RADseq for Ecological and Evolutionary Genomics.” Nature Reviews. Genetics 17 (2): 81–92.
 
 Catchen, Julian M., Paul A. Hohenlohe, Louis Bernatchez, W. Chris Funk, Kimberly R. Andrews, and Fred W. Allendorf. 2017. “Unbroken: RADseq Remains a Powerful Tool for Understanding the Genetics of Adaptation in Natural Populations.” Molecular Ecology Resources.
 
