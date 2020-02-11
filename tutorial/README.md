@@ -2,8 +2,8 @@
 
 Restriction-associated DNA sequencing (RAD-seq) approaches are a collection of methods used to assay genetic variation in groups of individuals. These approaches are a form of **reduced representation sequencing**. This means that some relatively small fraction of sites in the genome, usually widely dispersed, are targeted for sequencing. This is accomplished by digesting the genome using 1 or more restriction enzymes, and sequencing DNA adjacent to the cut site(s). Many types of questions (see discussion in Lowry et al. 2016 and Catchen et al. 2017) do not necessarily require the kind of genomically dense data produced by whole genome sequencing (WGS), so RAD-seq provides two benefits: 
 
-1. It is cost effective, allowing a much larger number of individuals to be genotyped than an equivalent WGS study. 
-2. It is computationally effective. A data file containing genotypes for several thousand sites is much more portable and easy to analyze than one potentially containing tens of millions of sites. 
+- It is cost effective, allowing a much larger number of individuals to be genotyped than an equivalent WGS study. 
+- It is computationally effective. A data file containing genotypes for several thousand sites is much more portable and easy to analyze than one potentially containing tens of millions of sites. 
 
 This tutorial will cover two popular software packages for analyzing RAD data. For each it will demonstrate two approaches for generating genotypes: _de novo_ assembly and reference mapping. 
 
