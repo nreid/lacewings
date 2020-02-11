@@ -1,3 +1,13 @@
+# RAD-seq tutorial
+---
+### Tutorial details
+
+This repository contains a tutorial for variant calling using RAD-seq data. Most steps have associated bash scripts tailored to the UConn CBC Xanadu cluster with appropriate headers for the [Slurm](https://slurm.schedmd.com/documentation.html) scheduler. These can be modified to run interactively or with another job scheduler. Datasets are located on the Xanadu cluster in the `/UCHC/PublicShare` directory. 
+
+Commands should never be executed on the submit nodes of any HPC machine.  If working on the Xanadu cluster, you should submit each script to the scheduler as `sbatch scriptname.sh` after modifying it as appropriate.  
+
+Basic editing of all scripts can be performed on the server with tools such as nano, vim, or emacs.  If you are new to Linux, please use [this](https://bioinformatics.uconn.edu/unix-basics) handy guide for the operating system commands.  In this tutorial, you will be working with common bioinformatic file formats, such as [FASTA](https://en.wikipedia.org/wiki/FASTA_format), [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format), [SAM/BAM](https://en.wikipedia.org/wiki/SAM_(file_format)), [GFF3/GTF](https://en.wikipedia.org/wiki/General_feature_format) and [VCF](https://en.wikipedia.org/wiki/Variant_Call_Format). You can learn even more about each file format [here](https://bioinformatics.uconn.edu/resources-and-events/tutorials/file-formats-tutorial/). If you do not have a Xanadu account and are an affiliate of UConn/UCHC, you can get one **[here](https://bioinformatics.uconn.edu/contact-us/)**.   
+
 ### Introduction
 
 Restriction-associated DNA sequencing (RAD-seq) approaches are a collection of methods used to assay genetic variation in groups of individuals. These approaches are a form of **reduced representation sequencing**. This means that some relatively small fraction of sites in the genome, usually widely dispersed, are targeted for sequencing. This is accomplished by digesting the genome using 1 or more restriction enzymes, and sequencing DNA adjacent to the cut site(s). Many types of questions (see discussion in Lowry et al. 2016 and Catchen et al. 2017) do not necessarily require the kind of genomically dense data produced by whole genome sequencing (WGS), so RAD-seq provides two benefits: 
