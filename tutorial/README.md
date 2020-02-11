@@ -1,5 +1,5 @@
 # RAD-seq tutorial
----
+
 ### Tutorial details
 
 This repository contains a tutorial for variant calling using RAD-seq data. Most steps have associated bash scripts tailored to the UConn CBC Xanadu cluster with appropriate headers for the [Slurm](https://slurm.schedmd.com/documentation.html) scheduler. These can be modified to run interactively or with another job scheduler. Datasets are located on the Xanadu cluster in the `/UCHC/PublicShare` directory. 
@@ -7,6 +7,7 @@ This repository contains a tutorial for variant calling using RAD-seq data. Most
 Commands should never be executed on the submit nodes of any HPC machine.  If working on the Xanadu cluster, you should submit each script to the scheduler as `sbatch scriptname.sh` after modifying it as appropriate.  
 
 Basic editing of all scripts can be performed on the server with tools such as nano, vim, or emacs.  If you are new to Linux, please use [this](https://bioinformatics.uconn.edu/unix-basics) handy guide for the operating system commands.  In this tutorial, you will be working with common bioinformatic file formats, such as [FASTA](https://en.wikipedia.org/wiki/FASTA_format), [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format), [SAM/BAM](https://en.wikipedia.org/wiki/SAM_(file_format)), [GFF3/GTF](https://en.wikipedia.org/wiki/General_feature_format) and [VCF](https://en.wikipedia.org/wiki/Variant_Call_Format). You can learn even more about each file format [here](https://bioinformatics.uconn.edu/resources-and-events/tutorials/file-formats-tutorial/). If you do not have a Xanadu account and are an affiliate of UConn/UCHC, you can get one **[here](https://bioinformatics.uconn.edu/contact-us/)**.   
+
 
 ### Introduction
 
@@ -37,6 +38,9 @@ Scripts for exploratory analysis of the entire dataset are located in "../analys
 The second source of data is an unpublished dataset by Wegrzyn and colleagues (WEA). It's a genetic association study of resistance of the green ash _Fraxinus pennsylvanica_ to an invasive beetle, the emerald ash borer (_Agrilus planipennis_). 
 
 The total dataset consists of 6 libraries of 10-16 barcoded samples. WEA use ddRAD (Peterson et al. 2012). In ddRAD, 2 enzymes are used to digest genomic DNA and only fragments cut by both enzymes are sequenced. WEA additionally use 
+
+
+
 
 
 ### References
