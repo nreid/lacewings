@@ -40,9 +40,11 @@ The total dataset consists of 6 libraries of 10-16 barcoded samples. WEA use ddR
 
 __Structure:__
 
-1. [ Lacewings - preprocess data ]()
-
-	a. [ Lacewings - Stacks _de novo_ ]()
+1. Lacewings - preprocess data ]()
+	
+	a. [ preprocess data ]()
+	
+	a. [ Stacks _de novo_ ]()
 
 	b. [ Lacewings - Stacks reference mapping ]()
 
