@@ -42,15 +42,15 @@ __Structure:__
 
 1. Lacewings - preprocess data ]()
 	
-	a. [ preprocess data ]()
+   a. [ preprocess data ]()
 	
-	a. [ Stacks _de novo_ ]()
+   b. [ Stacks _de novo_ ]()
 
-	b. [ Lacewings - Stacks reference mapping ]()
+   c. [ Lacewings - Stacks reference mapping ]()
 
-	c. [ Lacewings - ipyrad _de novo_ ]()
+   c. [ Lacewings - ipyrad _de novo_ ]()
 
-	d. [ Lacewings - ipyrad reference mapping ]()
+   d. [ Lacewings - ipyrad reference mapping ]()
 
 2. [ Green ash - preprocess data ]()
 
