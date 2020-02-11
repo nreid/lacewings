@@ -40,7 +40,7 @@ The total dataset consists of 6 libraries of 10-16 barcoded samples. WEA use ddR
 
 __Structure:__
 
-1. Lacewings - preprocess data ]()
+1. Lacewings
 	
    a. [ preprocess data ]()
 	
@@ -48,19 +48,21 @@ __Structure:__
 
    c. [ Lacewings - Stacks reference mapping ]()
 
-   c. [ Lacewings - ipyrad _de novo_ ]()
+   d. [ Lacewings - ipyrad _de novo_ ]()
 
-   d. [ Lacewings - ipyrad reference mapping ]()
+   e. [ Lacewings - ipyrad reference mapping ]()
 
-2. [ Green ash - preprocess data ]()
+2. Green ash 
 
-	a. [ Green ash - Stacks _de novo_ ]()
+   a. [ preprocess data ]()
 
-	b. [ Green ash - Stacks reference mapping ]()
+   b. [ Stacks _de novo_ ]()
 
-	c. [ Green ash - ipyrad _de novo_ ]()
+   c. [ Stacks reference mapping ]()
 
-	d. [ Green ash - ipyrad reference mapping ]()
+   d. [ ipyrad _de novo_ ]()
+
+   e. [ ipyrad reference mapping ]()
 
 
 __Required software tools:__ !!!CHECK THIS LIST!!!
